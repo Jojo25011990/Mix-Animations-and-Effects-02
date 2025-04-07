@@ -21,7 +21,9 @@
     stroke-dasharray: 3000;
     stroke-dashoffset: 3000;
 
-    animation: svg-animate 2s ease-in-out forwards;
+    &.active {
+      animation: svg-animate 2s ease-in-out forwards;
+    }
   }
 }
 // *** End of Section 04 - SVG Tiktok Logo ***
