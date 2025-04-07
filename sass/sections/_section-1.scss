@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+// *** Section 01 ***
+.section-1 {
+  background-color: $color-dark;
+}
+// *** End of Section 01 ***
+
+// *** Heading Primary ***
+.heading__primary {
+  color: $color-red;
+
+  cursor: pointer;
+
+  // *** Heading Span ***
+  & .heading__primary-span {
+    display: inline-block;
+
+    transition: 0.5s;
+
+    filter: blur(0.5rem);
+
+    scale: 1;
+
+    text-shadow: 0.2rem 0.3rem 0.1rem $color-dark;
+    letter-spacing: -1rem;
+
+    @include font-settings(10rem, 700);
+
+    @media (max-width: 550px) {
+      letter-spacing: -0.8rem;
+
+      @include font-settings(7.5rem, 700);
+    }
+  }
+
+  & .heading__primary-span:hover {
+    filter: blur(0);
+
+    scale: 1.15;
+  }
+
+  // *** End of Heading Span ***
+}
+// *** End of Heading Primary ***

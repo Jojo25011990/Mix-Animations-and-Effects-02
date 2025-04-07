@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+// *** Section 02 - Wrapper  ***
+.section-2 {
+  position: relative;
+
+  background-color: $color-light;
+}
+
+.wrapper {
+  position: relative;
+
+  @include dimension-settings(46rem);
+
+  @media (max-width: 550px) {
+    @include dimension-settings(35rem);
+  }
+}
+// *** End of Section 02 - Wrapper ***
+
+// *** Heading Secondary ***
+.heading__secondary {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 40%);
+
+  color: $color-black;
+
+  text: {
+    align: center;
+    transform: uppercase;
+    shadow: 0 0.5rem 1.5rem rgba($color-black, $alpha: 0.2);
+  }
+
+  cursor: pointer;
+
+  @include dimension-settings(100%);
+  @include font-settings(9rem);
+
+  &.heading__secondary-02 {
+    z-index: 10;
+    background-color: $color-light;
+    color: $color-white;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+  }
+
+  // *** Hover State ***
+  &.heading__secondary-02:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  &.heading__secondary-01:hover ~ .heading__secondary {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  // *** End of Hover State ***
+
+  @media (max-width: 550px) {
+    @include font-settings(6.5rem);
+  }
+}
+// *** End of Heading Secondary ***

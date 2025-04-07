@@ -1,0 +1,111 @@
+@use '../abstracts' as *;
+
+// *** Section 03 - Tiktok Logo ***
+.section-3 {
+  position: relative;
+  background-color: $color-dark;
+}
+
+.tiktok-img {
+  position: relative;
+  top: -15rem;
+
+  animation: animate 1.7s linear 1.5s infinite;
+}
+// *** End of Section 03 - Tiktok Logo ***
+
+// *** Heading Tertiary ***
+.heading__tertiary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: $color-white;
+
+  border-bottom: 0.75rem solid $color-white;
+
+  box-shadow: 0 1rem 1rem rgba($color-black, $alpha: 0.2);
+
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+
+  @include dimension-settings(100%, null, null, 33rem);
+  @include font-settings(6rem, null, null, -0.2rem);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -4.84rem;
+    left: 0;
+    transform: rotate(-50deg);
+
+    background-color: $color-white;
+
+    @include dimension-settings(100%, 0.75rem, null, calc(36rem / 3.5));
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4.84rem;
+    right: 0;
+    transform: rotate(50deg);
+
+    background-color: $color-white;
+
+    @include dimension-settings(100%, 0.75rem, null, calc(36rem / 3.5));
+  }
+
+  &-span {
+    position: relative;
+
+    display: inline-block;
+
+    animation: animate 1.7s linear infinite;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+
+      background: $color-white;
+      color: $color-red;
+
+      animation: spanBorder 1.7s linear infinite;
+
+      @include dimension-settings(100%, 0.6rem);
+    }
+  }
+
+  span:nth-child(1),
+  span:nth-child(1)::before {
+    animation-delay: 0s;
+  }
+  span:nth-child(2),
+  span:nth-child(2)::before {
+    animation-delay: 0.2s;
+  }
+  span:nth-child(3),
+  span:nth-child(3)::before {
+    animation-delay: 0.4s;
+  }
+  span:nth-child(4),
+  span:nth-child(4)::before {
+    animation-delay: 0.6s;
+  }
+  span:nth-child(5),
+  span:nth-child(5)::before {
+    animation-delay: 0.8s;
+  }
+  span:nth-child(6),
+  span:nth-child(6)::before {
+    animation-delay: 1s;
+  }
+  span:nth-child(7),
+  span:nth-child(7)::before {
+    animation-delay: 1.2s;
+  }
+}

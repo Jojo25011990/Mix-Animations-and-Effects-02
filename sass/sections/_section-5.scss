@@ -1,0 +1,87 @@
+@use '../abstracts' as *;
+// *** Section 05 ***
+.section-5 {
+  background-color: $color-dark;
+  position: relative;
+}
+// *** End of Section 05 ***
+
+// *** Nav ***
+.nav {
+  margin: 0 2rem;
+
+  @include dimension-settings(100%, $max-width: 111rem);
+}
+// *** End of Nav ***
+
+// *** Social && Social Links ***
+.social {
+  @include dimension-settings(100%);
+  @include flex-settings(space-between);
+
+  @media (max-width: 800px) {
+    @include flex-settings($direction: column);
+  }
+
+  &:hover .social__link,
+  &:active .social__link {
+    opacity: 0.3;
+    filter: blur(0.2rem);
+  }
+
+  & .social__link:hover,
+  & .social__link:active {
+    transform: scale(1.1);
+
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  // *** Social Links ***
+  &__link {
+    &:link,
+    &:visited {
+      position: relative;
+
+      display: inline-block;
+
+      color: $color-light;
+
+      padding: 1.2rem 2.4rem;
+
+      transition: all 0.8s;
+
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      @include font-settings(clamp(1.5rem, 2cqi, 2.5rem), 700);
+
+      @media (max-width: 800px) {
+        @include font-settings(2.5rem, 700);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform: scale(0);
+
+      background-color: $color-red;
+      border-radius: 1rem;
+
+      transition: all 0.8s;
+
+      @include dimension-settings(100%, 100%);
+    }
+
+    &:hover::before,
+    &:active::before {
+      transform: scale(1);
+    }
+  }
+
+  // *** End of Social Links ***
+}
+// *** End of Social && Social Links ***
