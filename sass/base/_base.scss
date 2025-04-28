@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+// *** Html, Body and Sections ***
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $color-dark;
+
+  font-family: $font-fa-primary;
+
+  overflow-x: hidden;
+
+  @include dimension-settings(100%);
+}
+
+.section {
+  @include flex-settings;
+  @include dimension-settings(100%, 100vh);
+}
+// *** End of Html, Body and Sections ***
+
+// *** Back to Top Button ***
+.back-to-top {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  z-index: 99;
+
+  color: $color-white;
+  background-color: $color-dark;
+
+  border: 0.2rem solid $color-white;
+  border-radius: 50%;
+
+  transition: all 0.25s;
+
+  cursor: pointer;
+
+  @include flex-settings;
+  @include dimension-settings(7.5rem, 7.5rem);
+  @include font-settings(3rem);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+// *** End of Back to Top Button ***

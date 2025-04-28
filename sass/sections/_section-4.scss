@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+// *** Section 04 - SVG Tiktok Logo ***
+.section-4 {
+  position: relative;
+  background-color: $color-dark;
+}
+
+.svg-tiktok {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+
+  @include dimension-settings(10rem, 10rem);
+
+  path {
+    stroke-width: 2rem;
+    fill: transparent;
+
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+
+    &.active {
+      animation: svg-animate 2s ease-in-out forwards;
+    }
+  }
+}
+// *** End of Section 04 - SVG Tiktok Logo ***
+
+// *** List ***
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include flex-settings;
+
+  &__item {
+    color: $color-light;
+
+    animation: animate-color 2s linear infinite;
+
+    @include font-settings(5rem, 700, 0.2rem, 0.2rem);
+
+    &:first-child {
+      text-transform: uppercase;
+    }
+  }
+}
